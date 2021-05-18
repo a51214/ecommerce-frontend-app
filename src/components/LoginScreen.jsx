@@ -25,7 +25,6 @@ class LoginScreen extends Component {
     );
 
     request.then((response) => {
-      debugger
       const params = {
         token: response["headers"]["access-token"],
         client: response["headers"]["client"],

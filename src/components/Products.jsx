@@ -12,7 +12,6 @@ class Products extends Component {
   }
 
   getProductsInfo() {
-    debugger
     const {token, client, uid, expiry} = this.props.auth;
     return axios({
       url: `http://ecommerce-web-site-5.herokuapp.com/api/v1/products`,
@@ -26,7 +25,6 @@ class Products extends Component {
         'token-type': 'Bearer'
       }
     }).then(response => {
-      debugger
       this.setState(
         {
           products: response.data
