@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+import 'raf/polyfill';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+
+function loadApp() {
+  let el = document.getElementById('app');
+  if (el) {
+    ReactDOM.render(
+      <App/>, el
+    );
+  }
 }
 
-export default App;
+window.loadApp = loadApp;
+
+if (module.hot) {
+  module.hot.accept();
+}
