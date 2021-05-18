@@ -14,7 +14,7 @@ class Products extends Component {
   getProductsInfo() {
     const {token, client, uid, expiry} = this.props.auth;
     return axios({
-      url: `http://ecommerce-web-site-5.herokuapp.com/api/v1/products`,
+      url: `https://ecommerce-web-site-5.herokuapp.com/api/v1/products`,
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
